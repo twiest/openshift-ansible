@@ -27,3 +27,5 @@ spec:
     - namespace: monitoring
       name: alertmanager-main
       port: web
+  securityContext:
+    runAsNonRoot: true

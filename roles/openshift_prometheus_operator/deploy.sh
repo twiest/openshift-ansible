@@ -6,9 +6,6 @@ oc new-project monitoring
 
 oc apply -f files/manifests/prometheus-operator
 
-oc adm policy add-scc-to-user anyuid -z prometheus-operator
-oc adm policy add-scc-to-user anyuid -z prometheus
-oc adm policy add-scc-to-user anyuid -z default
 oc adm policy add-cluster-role-to-user cluster-reader -z default
 
 printf "Waiting for Operator to register custom resource definitions..."
@@ -18,9 +15,6 @@ echo "Done!"
 oc apply -f files/manifests/prometheus/prometheus-k8s-service-account.yaml
 oc apply -f files/manifests/prometheus/prometheus-k8s-roles.yaml
 oc apply -f files/manifests/prometheus/prometheus-k8s-role-bindings.yaml
-
-oc adm policy add-scc-to-user anyuid -z prometheus-k8s
-
 oc apply -f files/manifests/prometheus/prometheus-k8s.yaml
 oc apply -f files/manifests/prometheus/prometheus-k8s-service.yaml
 
