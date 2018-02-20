@@ -11,7 +11,7 @@ groups:
     annotations:
       description: The configuration of the instances of the Alertmanager cluster
         `{{$labels.service}}` are out of sync.
-  # TODO: This shouldn't be hard-coded to 3 replicas.
+  # TODO: Replica count is hard-coded.
   - alert: AlertmanagerDownOrMissing
     expr: label_replace(prometheus_operator_alertmanager_spec_replicas, "job", "alertmanager-$1",
       "alertmanager", "(.*)") / ON(job) GROUP_RIGHT() sum(up) BY (job) != 3

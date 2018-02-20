@@ -7,3 +7,6 @@ metadata:
 spec:
   replicas: 3
   version: v0.14.0
+  resources:
+    requests:
+      memory: 32Mi
