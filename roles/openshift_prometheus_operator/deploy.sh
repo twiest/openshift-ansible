@@ -19,3 +19,8 @@ oc apply -f files/manifests/prometheus/prometheus-k8s.yaml
 oc apply -f files/manifests/prometheus/prometheus-k8s-service.yaml
 
 oc expose service prometheus-k8s
+
+oc apply -f files/manifests/alertmanager
+
+# TODO: convert to Route manifest?
+oc expose service alertmanager-main
