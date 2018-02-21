@@ -3,6 +3,7 @@
 
 #oc login -u system:admin
 oc new-project monitoring
+oc project monitoring
 
 oc apply -f files/manifests/prometheus-operator
 
