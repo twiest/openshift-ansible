@@ -7,7 +7,8 @@ Home of the WIP Prometheus-based OpenShift monitoring platform derived from [kub
 
 ```
 $ oc cluster up
-$ ./deploy.sh
+$ oc login -u system:admin
+$ ./hack/deploy.sh
 ```
 
 The Prometheus cluster is exposed at http://prometheus-k8s-monitoring.127.0.0.1.nip.io.

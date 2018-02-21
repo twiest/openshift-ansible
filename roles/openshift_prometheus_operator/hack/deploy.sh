@@ -15,10 +15,10 @@ oc apply -f files/manifests/prometheus
 
 oc expose service prometheus-k8s
 
-./generate-rules-configmap.sh | oc apply -f -
+./hack/generate-rules-configmap.sh | oc apply -f -
 
 # TODO: assemble routes dynamically from fragments
-./generate-alertmanager-config-secret.sh | oc apply -f -
+./hack/generate-alertmanager-config-secret.sh | oc apply -f -
 
 oc apply -f files/manifests/alertmanager
 
